@@ -13,6 +13,13 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production avenger build",
+    "build:website": "dumi build",
+    "release": "bumpp package.json --commit --push --tag",
+    "start": "cross-env NODE_ENV=development avenger build --watch",
+    "start:website": "dumi dev"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -83,12 +90,5 @@
   },
   "engines": {
     "node": ">=10"
-  },
-  "scripts": {
-    "build": "cross-env NODE_ENV=production avenger build",
-    "build:website": "dumi build",
-    "release": "bumpp package.json --commit --push --tag",
-    "start": "cross-env NODE_ENV=development avenger build --watch",
-    "start:website": "dumi dev"
   }
 }
